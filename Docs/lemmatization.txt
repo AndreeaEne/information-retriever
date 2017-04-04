@@ -1,3 +1,1 @@
-In departament avem cu precadere fete.
-Bolintineanu ilustreaza reactia mamei lui Stefan cel Mare la strigatul acestuia.
-dimineață
+lematizare (engl. lemmatization) (i.e. identificarea formei de bază, de dicţionar a unui cuvânt flexionat) şi identificarea rădăcinii cuvintelor (engl. stemming). De exemplu, de la şirul de caractere matematicii obţinem prin lematizare matematic.
