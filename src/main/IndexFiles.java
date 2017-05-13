@@ -1,3 +1,13 @@
+// highlighter - sa afiseze scorul si mic rezumat cu cateva cuvinte in stanga/dreapta, cele cautate intre niste taguri << / >>
+// un singur fragment cu ... intre cele 2 cuvinte (daca sunt in acelasi document)
+
+//restrictionare intrebari dupa extensie si in functie de data creeri (creere/modificare)
+// doar txt/anumita data
+//daca nu spun nimic - cauta tot
+// doc + data
+
+
+
 package main;
 
 import org.apache.lucene.analysis.Analyzer;
