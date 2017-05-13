@@ -1,1 +1,1 @@
-lematizare (engl. lemmatization) (i.e. identificarea formei de bază, de dicţionar a unui cuvânt flexionat) şi identificarea rădăcinii cuvintelor (engl. stemming). De exemplu, de la şirul de caractere matematicii obţinem prin lematizare matematic.
+lematizare (engl. lemmatization) (i.e. identificarea formei de bază, de dicţionar a unui cuvânt flexionat) şi identificarea rădăcinii cuvintelor (engl. stemming). De exemplu, de la şirul de caractere bunicului obţinem prin lematizare bunic.
