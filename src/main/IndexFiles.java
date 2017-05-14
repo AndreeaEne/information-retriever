@@ -1,20 +1,39 @@
 // highlighter - sa afiseze scorul si mic rezumat cu cateva cuvinte in stanga/dreapta, cele cautate intre niste taguri << / >>
 // un singur fragment cu ... intre cele 2 cuvinte (daca sunt in acelasi document)
 
-//restrictionare intrebari dupa extensie si in functie de data creeri (creere/modificare)
+// restrictionare intrebari dupa extensie si in functie de data modificarii
 // doar txt/anumita data
-//daca nu spun nimic - cauta tot
+// daca nu spun nimic - cauta tot
 // doc + data
+
+
+/**
+ * lucene format: yyyyMMddHHmm
+ * input format: ddMMyyyy (after keeping only numbers from query)
+ * output format: dd-MMM-yyyy HH:mm
+ *
+ * query: facultate 10.05.2017
+ * results: Docs/stopwords.txt  |  modified: 14-May-2017 11:57
+ * excluded: Docs/diacritics.txt  |  modified: 09-May-2017 15:03
+ *
+ *
+ * query: facultate 01.05.2017
+ * results: Docs/stopwords.txt  |  modified: 14-May-2017 11:57,
+ *          Docs/diacritics.txt  |  modified: 09-May-2017 15:03
+ * excluded:
+ *
+ *
+ * query: facultate
+ * results: Docs/stopwords.txt  |  modified: 14-May-2017 11:57,
+ *          Docs/diacritics.txt  |  modified: 09-May-2017 15:03
+ */
 
 
 
 package main;
 
 import org.apache.lucene.analysis.Analyzer;
-import org.apache.lucene.document.Document;
-import org.apache.lucene.document.Field;
-import org.apache.lucene.document.StringField;
-import org.apache.lucene.document.TextField;
+import org.apache.lucene.document.*;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.index.IndexWriterConfig.OpenMode;
@@ -152,6 +171,7 @@ public class IndexFiles {
         ParseContext context = new ParseContext();
         parser.parse(is, handler, metadata, context);
 
+        doc.add(new TextField("modified", DateTools.timeToString(file.lastModified(), DateTools.Resolution.MINUTE), Field.Store.YES));
         doc.add(new TextField("contents", handler.toString(), Field.Store.YES));
 
 
