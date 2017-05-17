@@ -1,12 +1,12 @@
-// highlighter - sa afiseze scorul si mic rezumat cu cateva cuvinte in stanga/dreapta, cele cautate intre niste taguri << / >>
-// un singur fragment cu ... intre cele 2 cuvinte (daca sunt in acelasi document)
+/*
+ * 2. highlighter: Sa se afiseze scorul si un mic rezumat cu cateva cuvinte in stanga/dreapta, cele cautate intre niste taguri <B>cuvant</B>
+ *                 un singur fragment cu "..." intre cele 2 cuvinte, daca sunt in acelasi document.
 
-// restrictionare intrebari dupa extensie si in functie de data modificarii
-// doar txt/anumita data
-// daca nu spun nimic - cauta tot
-// doc + data
-// popescunmarius@gmail.com | nume, grupa, sursa
-
+ * 3. restrictionare: Intrebari dupa extensie si in functie de data modificarii documentelor
+ *                    doar txt/anumita data, daca nu se aduaga nimic, cauta tot
+ *
+ * Mail to: popescunmarius@gmail.com | nume, grupa, sursa
+ */
 
 /**
  * lucene format: yyyyMMddHHmm
@@ -30,7 +30,6 @@
  * results: Docs/stopwords.txt  |  modified: 14-May-2017 11:57,
  *          Docs/diacritics.txt  |  modified: 09-May-2017 15:03
  */
-
 
 
 package main;
