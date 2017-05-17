@@ -7,6 +7,8 @@ Information retrieval for Romanian documents.
 - Steamming: if you search for the word *Mama*, you cand find *Mamele, memelor, mamei*
 - Stopwords: ignore words such as *şi*, *în*, *a*, *cu*, etc.
 - Indexing and searching in any text files: .txt, .word, .rtf, .pdf, .html.
+- Highlighter: find text snippets from a hit document, and highlight tokens matching the query.
+- Limit search using: *last modified date* and *file format*. 
 
 
 ## Technology & Libraries
