@@ -21,9 +21,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Paths;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.text.*;
 import java.util.*;
 
 
@@ -79,8 +77,10 @@ public class SearchFiles {
                 System.out.println("Looking for files from: " + dateToOutputFormat(inputDate));
             }
 
-
-            Query query = parser.parse(line.replaceAll("[^a-zA-Z]", "")); //removes all non alphabetic characters
+            Query query = parser.parse(line);
+            if (isNumeric(line)) {
+                query = parser.parse(line.replaceAll("[^a-z]", "")); //removes all non alphabetic characters
+            }
             System.out.println("Searching for: " + query.toString("contents"));
             System.out.println();
 
@@ -188,6 +188,14 @@ public class SearchFiles {
 
         // only documents edited later than the searched date are valid
         return docDate.after(searchedDate);
+    }
+
+    public static boolean isNumeric(String str)
+    {
+        NumberFormat formatter = NumberFormat.getInstance();
+        ParsePosition pos = new ParsePosition(0);
+        formatter.parse(str, pos);
+        return str.length() == pos.getIndex();
     }
 }
 

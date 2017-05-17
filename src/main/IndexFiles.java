@@ -5,12 +5,15 @@
 // doar txt/anumita data
 // daca nu spun nimic - cauta tot
 // doc + data
+// popescunmarius@gmail.com | nume, grupa, sursa
 
 
 /**
  * lucene format: yyyyMMddHHmm
  * input format: ddMMyyyy (after keeping only numbers from query)
  * output format: dd-MMM-yyyy HH:mm
+ *
+ * QUERIES
  *
  * query: facultate 10.05.2017
  * results: Docs/stopwords.txt  |  modified: 14-May-2017 11:57
